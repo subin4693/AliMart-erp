@@ -1,13 +1,27 @@
 import React from "react";
-import { Button } from "./components/ui/button";
+
+import { Reports } from "@/pages";
+import Layout from "@/layouts/Layout";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
-    return (
-        <div>
-            App
-            <Button>button</Button>
-        </div>
-    );
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <Layout />,
+
+            children: [
+                {
+                    path: "/",
+                    element: <Reports />,
+                },
+            ],
+        },
+    ]);
+
+    return <RouterProvider router={router} />;
 };
 
 export default App;
