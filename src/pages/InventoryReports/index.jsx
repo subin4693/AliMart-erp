@@ -30,14 +30,16 @@ const index = () => {
     return (
         <div>
             <h1 className="font-semibold text-3xl mb-5">Recent Activity</h1>
-            <div className="flex gap-20 flex-wrap">
-                <BarChart
-                    selectedMonth={selectedMonth}
-                    setSelectedMonth={setSelectedMonth}
-                    selectedYear={selectedYear}
-                    setSelectedYear={setSelectedYear}
-                />
-                <Card className="p-5 w-[640px]">
+            <div className="flex gap-10 flex-wrap">
+                <div className="md:w-2/3 lg:w-[90vh]">
+                    <BarChart
+                        selectedMonth={selectedMonth}
+                        setSelectedMonth={setSelectedMonth}
+                        selectedYear={selectedYear}
+                        setSelectedYear={setSelectedYear}
+                    />
+                </div>
+                <Card className="p-5 w-full md:w-1/3 lg:w-[640px]">
                     <div className="flex items-center justify-between ">
                         <h1 className="text-xl font-semibold">Top item categories</h1>
                         <a href="" className="text-[#2576b6]">
@@ -123,8 +125,8 @@ const index = () => {
                     </div>
                 </Card>
             </div>
-            <div className="flex flex-wrap gap-20 mb-5">
-                <Card className="p-5 w-[500px] mt-10">
+            <div className="flex flex-wrap gap-10 ">
+                <Card className="p-5 w-[90vh] mt-10">
                     <h1 className="text-xl font-semibold mb-5">Stock numbers</h1>
                     <div className="">
                         <div className="flex justify-between items-center">
@@ -141,7 +143,7 @@ const index = () => {
                         </div>
                     </div>
                 </Card>
-                <Card className="p-5 w-[700px] mt-10">
+                <Card className="p-5 w-[640px]  mt-10">
                     <div className="flex items-center justify-between ">
                         <h1 className="text-xl font-semibold">Store list</h1>
                         <a href="" className="text-[#2576b6]">
