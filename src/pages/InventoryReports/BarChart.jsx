@@ -69,10 +69,8 @@ export default function BarChartComponent({
                         <CartesianGrid vertical={true} />
                         <XAxis
                             dataKey="order"
-                            tickLine={true}
-                            tickMargin={10}
+                            tickLine={false}
                             axisLine={true}
-                            tickFormatter={(value) => value.slice(0, 3)}
                         />
                         <ChartTooltip cursor={true} content={<ChartTooltipContent hideLabel />} />
                         <Bar dataKey="desktop" fill="#2576b6" radius={8}>

@@ -2,7 +2,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "@/assets/alimart logo.png"
+import logo from "@/assets/alimart logo.png";
 
 const Sidebar = () => {
     const [open, setOpen] = useState(true);
@@ -10,7 +10,6 @@ const Sidebar = () => {
 
     const navigate = useNavigate();
     const toggleDropdown = () => {
-       
         setDropdownOpen((prev) => !prev);
     };
 
@@ -35,7 +34,11 @@ const Sidebar = () => {
                     </Button>
 
                     {/* Sidebar content */}
-                    <div className={`   min-w-[100px] max-w-[100px]  delay-50 ${open ? "opacity-1" : "opacity-0 -z-10"}`}>
+                    <div
+                        className={`   min-w-[100px] max-w-[100px]  delay-50 ${
+                            open ? "opacity-1" : "opacity-0 -z-10"
+                        }`}
+                    >
                         <img src={logo} className="w-full h-full" />
                     </div>
                 </div>
@@ -60,9 +63,11 @@ const Sidebar = () => {
                                         Inventory Reports
                                     </div>
                                 </Link>
-                                <div className="block px-4 py-2 hover:bg-gray-600 whitespace-nowrap">
-                                    Warehouse Management Reports
-                                </div>
+                                <Link to="/warehouse">
+                                    <div className="block px-4 py-2 hover:bg-gray-600 whitespace-nowrap">
+                                        Warehouse Management Reports
+                                    </div>
+                                </Link>
                                 <div className="block px-4 py-2 hover:bg-gray-600 whitespace-nowrap">
                                     Profit & Loss Reports
                                 </div>
