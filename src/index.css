@@ -71,3 +71,6 @@
 .custom-monthpicker .react-calendar__navigation {
     display: none;
 }
+.react-calendar__navigation__prev2-button, .react-calendar__navigation__next2-button{
+    display:none;
+}  

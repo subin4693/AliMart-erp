@@ -3,7 +3,7 @@ import BarChart from "./BarChart";
 import TopBar from "./Topbar";
 import { Card, CardContent } from "@/components/ui/card";
 import TopCard from "./TopCard";
-import { DollarSignIcon } from "lucide-react";
+import { DollarSignIcon, PersonStanding, ShoppingBasket, SquareStack, Type } from "lucide-react";
 import MixedBarChart from "./MixedBarChart";
 import YearMonthWeekPicker from "./YearPicker";
 import MonthPicker from "./MonthPicker";
@@ -19,21 +19,21 @@ const Reports = () => {
     const [selectedYear, setSelectedYear] = useState(null); // Selected year state
     const [selectedMonth, setSelectedMonth] = useState(null); // Selected month state
 
-    console.log(date);
+ 
     const branches = [
         {
             _id: "idone",
-            name: "Branch1",
+            name: "Wharehouse 1",
             location: "location 1",
         },
         {
             _id: "idtwo",
-            name: "Branch2",
+            name: "Wharehouse 2",
             location: "location 2",
         },
         {
             _id: "idthree",
-            name: "Branch3",
+            name: "Wharehouse 3",
             location: "location 4",
         },
     ];
@@ -110,12 +110,13 @@ const Reports = () => {
                 selectedCategory={selectedCategory}
                 setSelectedCategory={setSelectedCategory}
             />
+ 
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-5 mt-5 ">
-                <TopCard title={"Total Revenue"} number={"400"} Icon={DollarSignIcon} />
-                <TopCard title={"Total Sales count"} number={"400"} Icon={DollarSignIcon} />
-                <TopCard title={"Total Categorys"} number={"400"} Icon={DollarSignIcon} />
-                <TopCard title={"Total Products"} number={"400"} Icon={DollarSignIcon} />
+                <TopCard title={"Total Revenue"} number={"7900 Qar"} Icon={DollarSignIcon} />
+                <TopCard title={"Total Sales count"} number={"400"} Icon={PersonStanding} />
+                <TopCard title={"Total Categorys"} number={"7"} Icon={SquareStack} />
+                <TopCard title={"Total Products"} number={"984"} Icon={ShoppingBasket} />
             </div>
             <div className="mt-5">
                 <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-5  ">

@@ -47,8 +47,8 @@ export default function BarChartComponent({
             <CardHeader>
                 <div className="flex justify-between items-center">
                     <div>
-                        <CardTitle>Bar Chart - Label</CardTitle>
-                        <CardDescription>January - June 2024</CardDescription>
+                        <CardTitle>Total sales for 2024</CardTitle>
+                        {/* <CardDescription>January - June 2024</CardDescription> */}
                     </div>
                     <div className="flex gap-2">
                         <YearPicker selectedYear={selectedYear} setSelectedYear={setSelectedYear} />

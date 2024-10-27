@@ -28,7 +28,7 @@ const YearPicker = ({ selectedYear, setSelectedYear }) => {
                         value={new Date(selectedYear || 2000, 0)} // Set the value to the selected year
                         minDetail="decade"
                         maxDetail="decade"
-                        minDate={new Date(2000, 0, 1)} // Limit the minimum year to 2000
+                        minDate={new Date(2001, 0, 1)} // Limit the minimum year to 2000
                         maxDate={new Date(currentYear, 11, 31)} // Limit the maximum year to the current year
                         showNeighboringMonth={false}
                     />
