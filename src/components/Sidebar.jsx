@@ -35,7 +35,7 @@ const Sidebar = () => {
 
                     {/* Sidebar content */}
                     <div
-                        className={`   min-w-[100px] max-w-[100px]  delay-50 ${
+                        className={`   min-w-[100px] max-w-[100px]  delay-100 ${
                             open ? "opacity-1" : "opacity-0 -z-10"
                         }`}
                     >

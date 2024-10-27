@@ -51,7 +51,7 @@ const ChartComponent = () => {
             <ChartStyle id={id} config={chartConfig} />
             <CardHeader className="flex-row items-start space-y-0 pb-0">
                 <div className="grid gap-1">
-                    <CardTitle>Most Selling Category</CardTitle>
+                    <CardTitle>Products For Each Category</CardTitle>
                 </div>
                 <Select value={activeCategory} onValueChange={setActiveCategory}>
                     <SelectTrigger
@@ -129,7 +129,7 @@ const ChartComponent = () => {
                                                     y={(viewBox.cy || 0) + 24}
                                                     className="fill-muted-foreground"
                                                 >
-                                                    Visitors
+                                                    Products
                                                 </tspan>
                                             </text>
                                         );
