@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Reports } from "@/pages";
+import { Reports, InventoryReports } from "@/pages";
+// import { InventoryReports } from "@/pages/InventoryReports";
 import Layout from "@/layouts/Layout";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -16,6 +17,10 @@ const App = () => {
                 {
                     path: "/",
                     element: <Reports />,
+                },
+                {
+                    path: "/inventory",
+                    element: <InventoryReports />,
                 },
             ],
         },

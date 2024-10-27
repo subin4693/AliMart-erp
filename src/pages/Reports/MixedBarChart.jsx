@@ -85,12 +85,7 @@ const MixedBarChart = ({ selectedYear, setSelectedYear, selectedMonth, setSelect
                             cursor={false}
                             content={<ChartTooltipContent indicator="line" />}
                         />
-                        <Bar
-                            dataKey="desktop"
-                            layout="vertical"
-                            fill="var(--color-desktop)"
-                            radius={4}
-                        >
+                        <Bar dataKey="desktop" layout="vertical" fill="#2576b6" radius={4}>
                             <LabelList
                                 dataKey="month"
                                 position="insideLeft"
