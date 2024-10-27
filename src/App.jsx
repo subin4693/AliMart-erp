@@ -5,7 +5,6 @@ import { Reports, InventoryReports, WarehouseReports } from "@/pages";
 import Layout from "@/layouts/Layout";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
 
 const App = () => {
     const router = createBrowserRouter([

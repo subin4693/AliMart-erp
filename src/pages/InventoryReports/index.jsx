@@ -16,9 +16,8 @@ import img12 from "../../assets/12.png";
 import img13 from "../../assets/13.png";
 import img14 from "../../assets/14.png";
 import img15 from "../../assets/16.png";
-import img17 from "../../assets/17.png";
 
-const index = () => {
+const Index = () => {
     const [selectedYear, setSelectedYear] = useState(null);
     const [selectedMonth, setSelectedMonth] = useState(null);
     const data = [
@@ -27,11 +26,12 @@ const index = () => {
         { city: "Chicago", employees: 25, items: 30, orders: 2 },
         { city: "Houston", employees: 15, items: 30, orders: 4 },
     ];
+
     return (
-        <div>
+        <div className="p-4">
             <h1 className="font-semibold text-3xl mb-5">Recent Activity</h1>
-            <div className="flex gap-10 flex-wrap">
-                <div className="md:w-2/3 lg:w-[90vh]">
+            <div className="flex flex-col md:flex-row gap-10">
+                <div className="md:w-2/3 lg:w-[70%]">
                     <BarChart
                         selectedMonth={selectedMonth}
                         setSelectedMonth={setSelectedMonth}
@@ -39,114 +39,63 @@ const index = () => {
                         setSelectedYear={setSelectedYear}
                     />
                 </div>
-                <Card className="p-5 w-full md:w-1/3 lg:w-[640px]">
-                    <div className="flex items-center justify-between ">
-                        <h1 className="text-xl font-semibold">Top item categories</h1>
-                        <a href="" className="text-[#2576b6]">
+                <Card className="p-5 w-full md:w-1/3 lg:w-[30%]">
+                    <div className="flex items-center justify-between">
+                        <h1 className="text-xl font-semibold">Top Categories Products</h1>
+                        <a href="#" className="text-[#2576b6]">
                             View all
                         </a>
                     </div>
-                    <div className="mt-5 flex flex-wrap gap-5">
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img1}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img2}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img3}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img4}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img5}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img6}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img7}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img8}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img9}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img10}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img11}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img12}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img13}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img14}
-                            alt=""
-                        />
-                        <img
-                            className="w-[100px] h-[100px] object-cover rounded-xl"
-                            src={img15}
-                            alt=""
-                        />
+                    <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
+                        {[
+                            img1,
+                            img2,
+                            img3,
+                            img4,
+                            img5,
+                            img6,
+                            img7,
+                            img8,
+                            img9,
+                            img10,
+                            img11,
+                            img12,
+                            img13,
+                            img14,
+                            img15,
+                        ].map((src, index) => (
+                            <img
+                                key={index}
+                                className="w-[100px] h-[100px] object-cover rounded-xl"
+                                src={src}
+                                alt=""
+                            />
+                        ))}
                     </div>
                 </Card>
             </div>
-            <div className="flex flex-wrap gap-10 ">
-                <Card className="p-5 w-[90vh] mt-10">
-                    <h1 className="text-xl font-semibold mb-5">Stock numbers</h1>
-                    <div className="">
+            <div className="flex flex-col md:flex-row gap-10 mt-10">
+                <Card className="p-5 w-full md:w-[45%] lg:w-[30%]">
+                    <h1 className="text-xl font-semibold mb-5">Stock Numbers</h1>
+                    <div>
                         <div className="flex justify-between items-center">
-                            <h1>Low stock items</h1>
+                            <h1>Low Stock Items</h1>
                             <h1>12</h1>
                         </div>
                         <div className="flex justify-between items-center">
-                            <h1>Low stock items</h1>
-                            <h1>12</h1>
+                            <h1>Medium Stock Items</h1>
+                            <h1>24</h1>
                         </div>
                         <div className="flex justify-between items-center">
-                            <h1>Low stock items</h1>
-                            <h1>12</h1>
+                            <h1>High Stock Items</h1>
+                            <h1>30</h1>
                         </div>
                     </div>
                 </Card>
-                <Card className="p-5 w-[640px]  mt-10">
-                    <div className="flex items-center justify-between ">
-                        <h1 className="text-xl font-semibold">Store list</h1>
-                        <a href="" className="text-[#2576b6]">
+                <Card className="p-5 w-full md:w-[45%] lg:w-[70%]">
+                    <div className="flex items-center justify-between">
+                        <h1 className="text-xl font-semibold">Store List</h1>
+                        <a href="#" className="text-[#2576b6]">
                             View all
                         </a>
                     </div>
@@ -161,7 +110,7 @@ const index = () => {
                                     {item.employees} Employees
                                 </h1>
                                 <h1 className="text-gray-600 flex-1 text-center">
-                                    {item.items} items
+                                    {item.items} Items
                                 </h1>
                                 <h1 className="text-gray-600 flex-1 text-center">
                                     {item.orders} Orders
@@ -175,4 +124,4 @@ const index = () => {
     );
 };
 
-export default index;
+export default Index;
