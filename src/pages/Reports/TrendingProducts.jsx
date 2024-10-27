@@ -30,7 +30,7 @@ const TrendingProducts = () => {
     ];
 
     return (
-        <Card className="p-5 w-full md:w-1/2 lg:w-1/3">
+        <Card className="p-5 w-full ">
             <h1 className="font-bold text-lg mb-5">Most Selling Products</h1>
             <table className="w-full text-left border-collapse">
                 <thead>
