@@ -49,7 +49,7 @@ const TrendingProducts = () => {
     ];
     return (
         <Card className="p-5 grid-1   ">
-            <h1 className="font-bold text-lg">Recent Sales</h1>
+           <h1 className="font-bold text-lg mb-5">Most Selling Products</h1>
             {recentSales.map((sales, index) => (
                 <div key={index} className="mb-1">
                     <div>

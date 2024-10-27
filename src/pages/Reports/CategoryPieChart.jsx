@@ -2,8 +2,7 @@
 
 import * as React from "react";
 import { Label, Pie, PieChart, Sector } from "recharts";
-
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
     ChartContainer,
     ChartStyle,
@@ -18,99 +17,67 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 
-export const description = "An interactive pie chart";
+export const description = "An interactive pie chart displaying category data";
 
 const desktopData = [
-    { month: "january", desktop: 186, fill: "var(--color-january)" },
-    { month: "february", desktop: 305, fill: "var(--color-february)" },
-    { month: "march", desktop: 237, fill: "var(--color-march)" },
-    { month: "april", desktop: 173, fill: "var(--color-april)" },
-    { month: "may", desktop: 209, fill: "var(--color-may)" },
+    { category: "Clothes", value: 186, fill: "hsl(var(--chart-1))" },
+    { category: "Groceries", value: 305, fill: "hsl(var(--chart-2))" },
+    { category: "Snacks", value: 237, fill: "hsl(var(--chart-3))" },
+    { category: "Cold Drinks", value: 173, fill: "hsl(var(--chart-4))" },
+    { category: "Sweets", value: 209, fill: "hsl(var(--chart-5))" },
 ];
 
 const chartConfig = {
-    visitors: {
-        label: "Visitors",
-    },
-    desktop: {
-        label: "Desktop",
-    },
-    mobile: {
-        label: "Mobile",
-    },
-    january: {
-        label: "January",
-        color: "hsl(var(--chart-1))",
-    },
-    february: {
-        label: "February",
-        color: "hsl(var(--chart-2))",
-    },
-    march: {
-        label: "March",
-        color: "hsl(var(--chart-3))",
-    },
-    april: {
-        label: "April",
-        color: "hsl(var(--chart-4))",
-    },
-    may: {
-        label: "May",
-        color: "hsl(var(--chart-5))",
-    },   
+    january: { label: "Clothes", color: "hsl(var(--chart-1))" },
+    february: { label: "Groceries", color: "hsl(var(--chart-2))" },
+    march: { label: "Snacks", color: "hsl(var(--chart-3))" },
+    april: { label: "Cold Drinks", color: "hsl(var(--chart-4))" },
+    may: { label: "Sweets", color: "hsl(var(--chart-5))" },
 };
 
 const ChartComponent = () => {
     const id = "pie-interactive";
-    const [activeMonth, setActiveMonth] = React.useState(desktopData[0].month);
+    const [activeCategory, setActiveCategory] = React.useState(desktopData[0].category);
 
     const activeIndex = React.useMemo(
-        () => desktopData.findIndex((item) => item.month === activeMonth),
-        [activeMonth],
+        () => desktopData.findIndex((item) => item.category === activeCategory),
+        [activeCategory],
     );
-    const months = React.useMemo(() => desktopData.map((item) => item.month), []);
+
+    const categories = React.useMemo(() => desktopData.map((item) => item.category), []);
 
     return (
         <Card data-chart={id} className="flex flex-col">
             <ChartStyle id={id} config={chartConfig} />
             <CardHeader className="flex-row items-start space-y-0 pb-0">
                 <div className="grid gap-1">
-                    <CardTitle>Most selling category</CardTitle>
-                    {/* <CardDescription>January - June 2024</CardDescription> */}
+                    <CardTitle>Most Selling Category</CardTitle>
                 </div>
-                <Select value={activeMonth} onValueChange={setActiveMonth}>
+                <Select value={activeCategory} onValueChange={setActiveCategory}>
                     <SelectTrigger
-                        className="ml-auto h-7 w-[130px] rounded-lg pl-2.5"
-                        aria-label="Select a value"
+                        className="ml-auto h-7 w-[150px] rounded-lg pl-2.5"
+                        aria-label="Select a category"
                     >
-                        <SelectValue placeholder="Select month" />
+                        <SelectValue placeholder="Select category" />
                     </SelectTrigger>
                     <SelectContent align="end" className="rounded-xl">
-                        {months.map((key) => {
-                            const config = chartConfig[key];
-
-                            if (!config) {
-                                return null;
-                            }
-
-                            return (
-                                <SelectItem
-                                    key={key}
-                                    value={key}
-                                    className="rounded-lg [&_span]:flex"
-                                >
-                                    <div className="flex items-center gap-2 text-xs">
-                                        <span
-                                            className="flex h-3 w-3 shrink-0 rounded-sm"
-                                            style={{
-                                                backgroundColor: `var(--color-${key})`,
-                                            }}
-                                        />
-                                        {config?.label}
-                                    </div>
-                                </SelectItem>
-                            );
-                        })}
+                        {desktopData.map(({ category, fill }) => (
+                            <SelectItem
+                                key={category}
+                                value={category}
+                                className="rounded-lg [&_span]:flex"
+                            >
+                                <div className="flex items-center gap-2 text-xs">
+                                    <span
+                                        className="flex h-3 w-3 shrink-0 rounded-sm"
+                                        style={{
+                                            backgroundColor: fill,
+                                        }}
+                                    />
+                                    {category}
+                                </div>
+                            </SelectItem>
+                        ))}
                     </SelectContent>
                 </Select>
             </CardHeader>
@@ -124,8 +91,8 @@ const ChartComponent = () => {
                         <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
                         <Pie
                             data={desktopData}
-                            dataKey="desktop"
-                            nameKey="month"
+                            dataKey="value"
+                            nameKey="category"
                             innerRadius={60}
                             strokeWidth={5}
                             activeIndex={activeIndex}
@@ -155,9 +122,7 @@ const ChartComponent = () => {
                                                     y={viewBox.cy}
                                                     className="fill-foreground text-3xl font-bold"
                                                 >
-                                                    {desktopData[
-                                                        activeIndex
-                                                    ].desktop.toLocaleString()}
+                                                    {desktopData[activeIndex].value.toLocaleString()}
                                                 </tspan>
                                                 <tspan
                                                     x={viewBox.cx}
@@ -169,6 +134,7 @@ const ChartComponent = () => {
                                             </text>
                                         );
                                     }
+                                    return null;
                                 }}
                             />
                         </Pie>

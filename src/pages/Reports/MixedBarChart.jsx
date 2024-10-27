@@ -18,12 +18,12 @@ import MonthPicker from "./MonthPicker";
 export const description = "A bar chart with a custom label";
 
 const chartData = [
-    { month: "January", desktop: 186, mobile: 80 },
-    { month: "February", desktop: 305, mobile: 200 },
-    { month: "March", desktop: 237, mobile: 120 },
-    { month: "April", desktop: 73, mobile: 190 },
-    { month: "May", desktop: 209, mobile: 130 },
-    { month: "June", desktop: 214, mobile: 140 },
+    { month: "Clothes", desktop: 186, mobile: 80 },
+    { month: "Groceries", desktop: 305, mobile: 200 },
+    { month: "Snacks", desktop: 237, mobile: 120 },
+    { month: "Cold Drinks", desktop: 73, mobile: 190 },
+    { month: "Sweets", desktop: 209, mobile: 130 },
+    // { month: "June", desktop: 214, mobile: 140 },
 ];
 
 const chartConfig = {
@@ -47,7 +47,7 @@ const MixedBarChart = ({ selectedYear, setSelectedYear, selectedMonth, setSelect
                 <div className="flex justify-between items-center flex-wrap">
                     <div>
                         <CardTitle>Bar Chart - Categorys</CardTitle>
-                        <CardDescription>January - June 2024</CardDescription>
+                        {/* <CardDescription>January - June 2024</CardDescription> */}
                     </div>
                     <div className="flex gap-2">
                         <YearPicker selectedYear={selectedYear} setSelectedYear={setSelectedYear} />
@@ -104,14 +104,14 @@ const MixedBarChart = ({ selectedYear, setSelectedYear, selectedMonth, setSelect
                     </BarChart>
                 </ChartContainer>
             </CardContent>
-            <CardFooter className="flex-col items-start gap-2 text-sm">
+            {/* <CardFooter className="flex-col items-start gap-2 text-sm">
                 <div className="flex gap-2 font-medium leading-none">
                     Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
                 </div>
                 <div className="leading-none text-muted-foreground">
                     Showing total visitors for the last 6 months
                 </div>
-            </CardFooter>
+            </CardFooter> */}
         </Card>
     );
 };

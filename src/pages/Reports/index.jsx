@@ -96,7 +96,187 @@ const Reports = () => {
                     total: 600.0,
                 },
             ],
-        },
+        },  {
+            customername: "John Doe",
+            items: [
+                {
+                    product: "64a1a90b0f22b7a508e1c001",
+                    category: "64a1b8f56f22d7a4179a1001",
+                    quantity: 2,
+                    price: 150.0,
+                    total: 300.0,
+                },
+                {
+                    product: "64a1a90b0f22b7a508e1c002",
+                    category: "64a1b8f56f22d7a4179a1002",
+                    quantity: 1,
+                    price: 500.0,
+                    total: 500.0,
+                },
+            ],
+        },  {
+            customername: "John Doe",
+            items: [
+                {
+                    product: "64a1a90b0f22b7a508e1c001",
+                    category: "64a1b8f56f22d7a4179a1001",
+                    quantity: 2,
+                    price: 150.0,
+                    total: 300.0,
+                },
+                {
+                    product: "64a1a90b0f22b7a508e1c002",
+                    category: "64a1b8f56f22d7a4179a1002",
+                    quantity: 1,
+                    price: 500.0,
+                    total: 500.0,
+                },
+            ],
+        },  {
+            customername: "John Doe",
+            items: [
+                {
+                    product: "64a1a90b0f22b7a508e1c001",
+                    category: "64a1b8f56f22d7a4179a1001",
+                    quantity: 2,
+                    price: 150.0,
+                    total: 300.0,
+                },
+                {
+                    product: "64a1a90b0f22b7a508e1c002",
+                    category: "64a1b8f56f22d7a4179a1002",
+                    quantity: 1,
+                    price: 500.0,
+                    total: 500.0,
+                },
+            ],
+        },  {
+            customername: "John Doe",
+            items: [
+                {
+                    product: "64a1a90b0f22b7a508e1c001",
+                    category: "64a1b8f56f22d7a4179a1001",
+                    quantity: 2,
+                    price: 150.0,
+                    total: 300.0,
+                },
+                {
+                    product: "64a1a90b0f22b7a508e1c002",
+                    category: "64a1b8f56f22d7a4179a1002",
+                    quantity: 1,
+                    price: 500.0,
+                    total: 500.0,
+                },
+            ],
+        },  {
+            customername: "John Doe",
+            items: [
+                {
+                    product: "64a1a90b0f22b7a508e1c001",
+                    category: "64a1b8f56f22d7a4179a1001",
+                    quantity: 2,
+                    price: 150.0,
+                    total: 300.0,
+                },
+                {
+                    product: "64a1a90b0f22b7a508e1c002",
+                    category: "64a1b8f56f22d7a4179a1002",
+                    quantity: 1,
+                    price: 500.0,
+                    total: 500.0,
+                },
+            ],
+        },  {
+            customername: "John Doe",
+            items: [
+                {
+                    product: "64a1a90b0f22b7a508e1c001",
+                    category: "64a1b8f56f22d7a4179a1001",
+                    quantity: 2,
+                    price: 150.0,
+                    total: 300.0,
+                },
+                {
+                    product: "64a1a90b0f22b7a508e1c002",
+                    category: "64a1b8f56f22d7a4179a1002",
+                    quantity: 1,
+                    price: 500.0,
+                    total: 500.0,
+                },
+            ],
+        },  {
+            customername: "John Doe",
+            items: [
+                {
+                    product: "64a1a90b0f22b7a508e1c001",
+                    category: "64a1b8f56f22d7a4179a1001",
+                    quantity: 2,
+                    price: 150.0,
+                    total: 300.0,
+                },
+                {
+                    product: "64a1a90b0f22b7a508e1c002",
+                    category: "64a1b8f56f22d7a4179a1002",
+                    quantity: 1,
+                    price: 500.0,
+                    total: 500.0,
+                },
+            ],
+        }, {
+            customername: "John Doe",
+            items: [
+                {
+                    product: "64a1a90b0f22b7a508e1c001",
+                    category: "64a1b8f56f22d7a4179a1001",
+                    quantity: 2,
+                    price: 150.0,
+                    total: 300.0,
+                },
+                {
+                    product: "64a1a90b0f22b7a508e1c002",
+                    category: "64a1b8f56f22d7a4179a1002",
+                    quantity: 1,
+                    price: 500.0,
+                    total: 500.0,
+                },
+            ],
+        },  {
+            customername: "John Doe",
+            items: [
+                {
+                    product: "64a1a90b0f22b7a508e1c001",
+                    category: "64a1b8f56f22d7a4179a1001",
+                    quantity: 2,
+                    price: 150.0,
+                    total: 300.0,
+                },
+                {
+                    product: "64a1a90b0f22b7a508e1c002",
+                    category: "64a1b8f56f22d7a4179a1002",
+                    quantity: 1,
+                    price: 500.0,
+                    total: 500.0,
+                },
+            ],
+        },  {
+            customername: "John Doe",
+            items: [
+                {
+                    product: "64a1a90b0f22b7a508e1c001",
+                    category: "64a1b8f56f22d7a4179a1001",
+                    quantity: 2,
+                    price: 150.0,
+                    total: 300.0,
+                },
+                {
+                    product: "64a1a90b0f22b7a508e1c002",
+                    category: "64a1b8f56f22d7a4179a1002",
+                    quantity: 1,
+                    price: 500.0,
+                    total: 500.0,
+                },
+            ],
+        },  
     ];
     return (
         <div className="  w-full">
@@ -118,37 +298,37 @@ const Reports = () => {
                 <TopCard title={"Total Categorys"} number={"7"} Icon={SquareStack} />
                 <TopCard title={"Total Products"} number={"984"} Icon={ShoppingBasket} />
             </div>
-            <div className="mt-5">
-                <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-5  ">
-                    <BarChart
-                        selectedMonth={selectedMonth}
-                        setSelectedMonth={setSelectedMonth}
-                        selectedYear={selectedYear}
-                        setSelectedYear={setSelectedYear}
-                    />
+                <div className="mt-5">
+                    <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-5  ">
+                        <BarChart
+                            selectedMonth={selectedMonth}
+                            setSelectedMonth={setSelectedMonth}
+                            selectedYear={selectedYear}
+                            setSelectedYear={setSelectedYear}
+                        />
 
-                    <Card className="p-5 grid-1   ">
-                        <h1 className="font-bold text-lg">Recent Sales</h1>
-                        {recentSales.map((sales, index) => (
-                            <div key={index} className="mb-1">
-                                <div>
-                                    <div className="flex justify-between align-center">
-                                        <h3 className="text-lg font-medium">
-                                            {sales.customername}
-                                        </h3>
+                        <Card className="p-5 grid-1   ">
+                            <h1 className="font-bold text-lg">Recent Sales</h1>
+                            {recentSales.map((sales, index) => (
+                                <div key={index} className="mb-1">
+                                    <div>
+                                        <div className="flex justify-between align-center">
+                                            <h3 className="text-lg font-medium">
+                                                {sales.customername}
+                                            </h3>
 
-                                        <h3 className="text-lg font-semibold">
-                                            {sales.items.reduce(
-                                                (acc, item2) => acc + item2.total,
-                                                0,
-                                            )}{" "}
-                                        </h3>
+                                            <h3 className="text-lg font-semibold">
+                                                {sales.items.reduce(
+                                                    (acc, item2) => acc + item2.total,
+                                                    0,
+                                                )}{" "}
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </Card>
-                </div>
+                            ))}
+                        </Card>
+                    </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
                 <MixedBarChart
