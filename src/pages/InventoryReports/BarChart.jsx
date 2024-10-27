@@ -57,7 +57,7 @@ export default function BarChartComponent({
                     </div> */}
                 </div>
             </CardHeader>
-            <CardContent className="w-[90vh]">
+            <CardContent className="w-full">
                 <ChartContainer config={chartConfig}>
                     <BarChart
                         accessibilityLayer
