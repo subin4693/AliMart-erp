@@ -40,39 +40,40 @@ const Index = () => {
                     />
                 </div>
                 <Card className="p-5 w-full md:w-1/3 lg:w-[30%]">
-                    <div className="flex items-center justify-between">
-                        <h1 className="text-xl font-semibold">Top Categories Products</h1>
-                        <a href="#" className="text-[#2576b6]">
-                            View all
-                        </a>
-                    </div>
-                    <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
-                        {[
-                            img1,
-                            img2,
-                            img3,
-                            img4,
-                            img5,
-                            img6,
-                            img7,
-                            img8,
-                            img9,
-                            img10,
-                            img11,
-                            img12,
-                            img13,
-                            img14,
-                            img15,
-                        ].map((src, index) => (
-                            <img
-                                key={index}
-                                className="w-[100px] h-[100px] object-cover rounded-xl"
-                                src={src}
-                                alt=""
-                            />
-                        ))}
-                    </div>
-                </Card>
+    <div className="flex items-center justify-between">
+        <h1 className="text-xl font-semibold">Top Categories Products</h1>
+        <a href="#" className="text-[#2576b6] hover:underline">
+            View all
+        </a>
+    </div>
+    <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
+        {[
+            img1,
+            img2,
+            img3,
+            img4,
+            img5,
+            img6,
+            img7,
+            img8,
+            img9,
+            img10,
+            img11,
+            img12,
+            img13,
+            img14,
+            img15,
+        ].map((src, index) => (
+            <img
+                key={index}
+                className="w-[100px] h-[100px] object-cover rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-2xl hover:border-2 hover:border-[#2576b6]"
+                src={src}
+                alt=""
+            />
+        ))}
+    </div>
+</Card>
+
             </div>
             <div className="flex flex-col md:flex-row gap-10 mt-10">
                 <Card className="p-5 w-full md:w-[45%] lg:w-[30%]">
