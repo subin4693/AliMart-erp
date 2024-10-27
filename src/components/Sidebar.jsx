@@ -25,11 +25,11 @@ const Sidebar = () => {
 
     return (
         <div
-            className={` ${open ? "w-[20rem]" : "w-[5rem]"
+            className={` ${open ? "w-[22rem]" : "w-[5rem]"
                 } h-screen bg-gray-800 transition-all duration-300 ease-in-out relative`}
         >
             <div
-                className={`${open ? "w-[20rem]" : "w-[5rem]"
+                className={`${open ? "w-[22rem]" : "w-[5rem]"
                     } h-screen  bg-slate-900 transition-all duration-300 ease-in-out fixed left-0 top-0 bottom-0`}
             >
                 <div className="flex pl-5  py-5 items-center bg-slate-900">
@@ -161,7 +161,7 @@ const Sidebar = () => {
                                 onClick={() => toggleDropdown("warehouse")}
                                 className="flex justify-between p-5 items-center text-white w-full text-xl"
                             >
-                                Warehouse Management <ChevronDown className="ml-2" />
+                                Warehouse Management <ChevronDown className="ml-2 text-xl" />
                             </Button>
                             {dropdownOpen.warehouse && (
                                 <div className="bg-gray-700 text-white rounded shadow-lg z-10">
