@@ -280,7 +280,7 @@ const Reports = () => {
     ];
     return (
         <div className="  w-full">
-            <TopBar
+            {/* <TopBar
                 branches={branches}
                 categorys={categorys}
                 date={date}
@@ -289,7 +289,7 @@ const Reports = () => {
                 setSelectedBranch={setSelectedBranch}
                 selectedCategory={selectedCategory}
                 setSelectedCategory={setSelectedCategory}
-            />
+            /> */}
  
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-5 mt-5 ">
@@ -309,6 +309,9 @@ const Reports = () => {
 
                         <Card className="p-5 grid-1   ">
                             <h1 className="font-bold text-lg">Recent Sales</h1>
+                            <div className="flex justify-between align-center font-bold mb-5  border-b pb-2 mt-2">
+                                <span>Name</span><span>Total cost</span>
+                                </div>
                             {recentSales.map((sales, index) => (
                                 <div key={index} className="mb-1">
                                     <div>
