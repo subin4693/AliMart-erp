@@ -130,7 +130,7 @@ const Index = () => {
                 </button> */}
                 <Button
                     onClick={downloadAllInvoices}
-                    className="py-3 px-4 rounded lg:w-[100px] bg-[#2576b6] w-full "
+                    className="p-2 rounded lg:w-[100px] bg-[#2576b6] w-full "
                 >
                     Download All
                 </Button>
@@ -156,7 +156,7 @@ const Index = () => {
                         <div className="border-t pt-4">
                             <p>Orders: {invoice.orders}</p>
                             <p>Items: {invoice.items}</p>
-                            <p>Total Amount: ${invoice.totalAmount}</p>
+                            <p>Total Amount: {invoice.totalAmount} QAR</p>
                         </div>
                         <Button
                             onClick={() => downloadInvoice(invoice)}

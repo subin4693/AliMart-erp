@@ -92,7 +92,7 @@ const Sidebar = () => {
                                     <Link to={"/billing"}>
                                         <div className="px-4 py-2 hover:bg-gray-600">Automated Billing</div>
                                     </Link>
-                                    <Link to={"/"}>
+                                    <Link to={"/customers"}>
                                         <div className="px-4 py-2 hover:bg-gray-600">Customer Information</div>
                                     </Link>
                                     <Link to={"/"}>
