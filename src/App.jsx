@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Reports, InventoryReports, WarehouseReports } from "@/pages";
+import { Reports, InventoryReports, WarehouseReports, AutomatedBilling } from "@/pages";
 // import { InventoryReports } from "@/pages/InventoryReports";
 import Layout from "@/layouts/Layout";
 
@@ -24,6 +24,10 @@ const App = () => {
                 {
                     path: "/warehouse",
                     element: <WarehouseReports />,
+                },
+                {
+                    path: "/billing",
+                    element: <AutomatedBilling />,
                 },
             ],
         },

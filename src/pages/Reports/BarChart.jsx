@@ -45,7 +45,7 @@ export default function BarChartComponent({
     selectedYear,
     setSelectedYear,
     selectedMonth,
-    setSelectedMonth,
+    setSelectedMonth,   
 }) {
     return (
         <Card>
