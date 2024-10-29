@@ -89,7 +89,7 @@ const Sidebar = () => {
                             </Button>
                             {dropdownOpen.billing && (
                                 <div className="bg-gray-700 text-white rounded shadow-lg z-10">
-                                    <Link to={"/"}>
+                                    <Link to={"/billing"}>
                                         <div className="px-4 py-2 hover:bg-gray-600">Automated Billing</div>
                                     </Link>
                                     <Link to={"/"}>
