@@ -6,6 +6,9 @@ import {
     WarehouseReports,
     AutomatedBilling,
     CustomerInfo,
+    StockLevel,
+    InventaryValuation,
+    BatchExpir,
 } from "@/pages";
 // import { InventoryReports } from "@/pages/InventoryReports";
 import Layout from "@/layouts/Layout";
@@ -38,6 +41,18 @@ const App = () => {
                 {
                     path: "/customers",
                     element: <CustomerInfo />,
+                },
+                {
+                    path: "/stock-levels",
+                    element: <StockLevel />,
+                },
+                {
+                    path: "/inventory-valuation",
+                    element: <InventaryValuation />,
+                },
+                {
+                    path: "/batch-expiry",
+                    element: <BatchExpir />,
                 },
             ],
         },

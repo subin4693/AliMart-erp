@@ -139,14 +139,14 @@ const Sidebar = () => {
                             {dropdownOpen.inventory && (
                                 <div className="bg-gray-700 text-white rounded shadow-lg z-10">
                                     <Link to={"/stock-levels"}>
-                                        <div className="px-4 py-2 hover:bg-gray-600">Real-Time Stock Levels</div>
+                                        <div className="px-4 py-2 hover:bg-gray-600">Stock Levels</div>
                                     </Link>
-                                    <Link to={"/stock-in-out"}>
+                                    {/* <Link to={"/stock-in-out"}>
                                         <div className="px-4 py-2 hover:bg-gray-600">Stock In/Out Management</div>
-                                    </Link>
-                                    <Link to={"/low-stock-alerts"}>
+                                    </Link> */}
+                                    {/* <Link to={"/low-stock-alerts"}>
                                         <div className="px-4 py-2 hover:bg-gray-600">Low Stock Alerts</div>
-                                    </Link>
+                                    </Link> */}
                                     <Link to={"/batch-expiry"}>
                                         <div className="px-4 py-2 hover:bg-gray-600">Batch & Expiry Management</div>
                                     </Link>

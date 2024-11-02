@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 const Index = () => {
     const [selectedYear, setSelectedYear] = useState("");
     const [selectedMonth, setSelectedMonth] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
     const [invoices, setInvoices] = useState([]);
 
@@ -19,32 +20,32 @@ const Index = () => {
         {
             city: "New York",
             product: "Product A",
+            cetgory: "Grocery",
             items: 30,
-            orders: 3,
             image: img1,
             date: "2023-01-15",
         },
         {
             city: "Los Angeles",
             product: "Product B",
+            cetgory: "Grocery",
             items: 20,
-            orders: 5,
             image: img2,
             date: "2023-05-20",
         },
         {
             city: "Chicago",
             product: "Product C",
+            cetgory: "Grocery",
             items: 25,
-            orders: 2,
             image: img3,
             date: "2024-07-10",
         },
         {
             city: "Houston",
             product: "Product D",
+            cetgory: "Grocery",
             items: 15,
-            orders: 4,
             image: img1,
             date: "2024-08-22",
         },
@@ -55,10 +56,13 @@ const Index = () => {
     const filteredInvoices = invoices.filter((invoice) => {
         const matchYear = selectedYear ? invoice.date.startsWith(selectedYear) : true;
         const matchMonth = selectedMonth ? invoice.date.slice(5, 7) === selectedMonth : true;
+        const matchCategory = selectedCategory
+            ? invoice.cetgory?.toLowerCase() === selectedCategory?.toLowerCase()
+            : true;
         const matchSearch =
             invoice.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
             invoice.product.toLowerCase().includes(searchQuery.toLowerCase());
-        return matchYear && matchMonth && matchSearch;
+        return matchYear && matchMonth && matchSearch && matchCategory;
     });
 
     // Automatically generate invoices when component mounts
@@ -83,11 +87,11 @@ const Index = () => {
 
     return (
         <div className="p-4">
-            <h1 className="font-semibold text-3xl mb-5">Automated Billing</h1>
+            <h1 className="font-semibold text-3xl mb-5">Stock Levels</h1>
 
             {/* Filter and Search Controls */}
             <div className="flex flex-col md:flex-row gap-4 mb-6">
-                <select
+                {/* <select
                     className="border p-2 rounded"
                     value={selectedYear}
                     onChange={(e) => setSelectedYear(e.target.value)}
@@ -95,7 +99,7 @@ const Index = () => {
                     <option value="">Filter by Year</option>
                     <option value="2023">2023</option>
                     <option value="2024">2024</option>
-                </select>
+                </select> */}
 
                 <select
                     className="border p-2 rounded"
@@ -117,6 +121,17 @@ const Index = () => {
                     <option value="12">December</option>
                 </select>
 
+                <select
+                    className="border p-2 rounded"
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                >
+                    <option value="">Filter by Cagetory</option>
+                    <option value="Cloths">Cloths</option>
+                    <option value="Toys">Toys</option>
+                    <option value="Grocery">Grocery</option>
+                </select>
+
                 <input
                     type="text"
                     placeholder="Search by city or product"
@@ -124,46 +139,56 @@ const Index = () => {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="border-2 p-2 rounded outline-none"
                 />
-                {/* 
-                <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-                    Download All
-                </button> */}
-                <Button
+
+                <p className="bg-blue-500 text-white text-xl text-center py-3 font-semibold px-4 rounded">
+                    Total items {invoices.length}
+                </p>
+                {/* <Button
                     onClick={downloadAllInvoices}
                     className="p-2 rounded lg:w-[100px] bg-[#2576b6] w-full "
                 >
                     Download All
-                </Button>
+                </Button> */}
             </div>
 
             {/* Invoice List */}
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-4 gap-6">
                 {filteredInvoices.map((invoice) => (
                     <Card key={invoice.id} className="p-5 shadow-lg">
-                        <div className="flex items-center gap-4 mb-4">
+                        <div className="flex flex-wrap justify-center items-center gap-4 mb-4">
                             <img
                                 src={invoice.image}
                                 alt="Product"
-                                className="w-20 h-20 object-cover rounded"
+                                className="w-20 h-20   object-cover rounded"
                             />
                             <div>
                                 <h2 className="text-lg font-semibold">
                                     {invoice.city} - {invoice.product}
                                 </h2>
+                                <p>Category: {invoice.cetgory}</p>
+
                                 <p>Date: {invoice.date}</p>
+                                <p>
+                                    Items: {invoice.items}{" "}
+                                    <span
+                                        className={
+                                            invoice.items < 20 ? "text-[#e62028]" : "text-green-600"
+                                        }
+                                    >
+                                        Left
+                                    </span>
+                                </p>
                             </div>
                         </div>
-                        <div className="border-t pt-4">
-                            <p>Orders: {invoice.orders}</p>
-                            <p>Items: {invoice.items}</p>
-                            <p>Total Amount: {invoice.totalAmount} QAR</p>
-                        </div>
-                        <Button
+                        {/* <div className="border-t pt-4">
+                            <p>Items: {invoice.items} Left</p>
+                        </div> */}
+                        {/* <Button
                             onClick={() => downloadInvoice(invoice)}
                             className="py-3 mt-4 px-4 rounded w-[100px] bg-[#2576b6]"
                         >
                             Download
-                        </Button>
+                        </Button> */}
                     </Card>
                 ))}
             </div>
