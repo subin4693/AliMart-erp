@@ -18,6 +18,7 @@ const Index = () => {
     const [salesData, setSalesData] = useState([]);
     const [selectedYear, setSelectedYear] = useState("");
     const [selectedMonth, setSelectedMonth] = useState("");
+    const [selectedWarehouse, setSelectedWarehouse] = useState(""); // New state for warehouse
     const [searchQuery, setSearchQuery] = useState("");
     const [filteredData, setFilteredData] = useState([]);
 
@@ -30,6 +31,7 @@ const Index = () => {
                 quantity: 100,
                 sales: 80,
                 date: "2023-01-15",
+                warehouse: "Warehouse A", // Added warehouse field
             },
             {
                 id: 2,
@@ -38,6 +40,7 @@ const Index = () => {
                 quantity: 50,
                 sales: 30,
                 date: "2023-02-20",
+                warehouse: "Warehouse B", // Added warehouse field
             },
             {
                 id: 3,
@@ -46,8 +49,9 @@ const Index = () => {
                 quantity: 200,
                 sales: 150,
                 date: "2024-01-10",
+                warehouse: "Warehouse A", // Added warehouse field
             },
-            // Add more items with dates as needed
+            // Add more items with dates and warehouse as needed
         ];
 
         setInventoryData(items);
@@ -71,7 +75,7 @@ const Index = () => {
 
     useEffect(() => {
         filterData();
-    }, [selectedYear, selectedMonth, searchQuery, inventoryData]);
+    }, [selectedYear, selectedMonth, selectedWarehouse, searchQuery, inventoryData]);
 
     const filterData = () => {
         let filtered = inventoryData;
@@ -85,6 +89,12 @@ const Index = () => {
         if (selectedMonth) {
             filtered = filtered.filter(
                 (item) => new Date(item.date).getMonth() + 1 === parseInt(selectedMonth),
+            );
+        }
+
+        if (selectedWarehouse) {
+            filtered = filtered.filter(
+                (item) => item.warehouse.toLowerCase() === selectedWarehouse.toLowerCase(),
             );
         }
 
@@ -114,7 +124,7 @@ const Index = () => {
                 <p className="text-xl text-gray-900">{totalValue.toFixed(2)} QAR</p>
             </div>
             <div className="flex flex-col md:flex-row gap-4 mb-6">
-                <select
+                {/* <select
                     className="border p-2 rounded"
                     value={selectedYear}
                     onChange={(e) => setSelectedYear(e.target.value)}
@@ -122,7 +132,7 @@ const Index = () => {
                     <option value="">Filter by Year</option>
                     <option value="2023">2023</option>
                     <option value="2024">2024</option>
-                </select>
+                </select> */}
 
                 <select
                     className="border p-2 rounded"
@@ -142,6 +152,16 @@ const Index = () => {
                     <option value="10">October</option>
                     <option value="11">November</option>
                     <option value="12">December</option>
+                </select>
+
+                <select
+                    className="border p-2 rounded"
+                    value={selectedWarehouse}
+                    onChange={(e) => setSelectedWarehouse(e.target.value)}
+                >
+                    <option value="">Filter by Warehouse</option>
+                    <option value="Warehouse A">Warehouse A</option>
+                    <option value="Warehouse B">Warehouse B</option>
                 </select>
             </div>
             <div>

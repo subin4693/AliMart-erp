@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
-// import { saveAs } from "file-saver";
 import img1 from "../../assets/1.png";
 import img2 from "../../assets/2.png";
 import img3 from "../../assets/3.png";
+import img4 from "../../assets/4.png";
 import { Button } from "@/components/ui/button";
-
-// import additional images as needed...
 
 const Index = () => {
     const [selectedYear, setSelectedYear] = useState("");
     const [selectedMonth, setSelectedMonth] = useState("");
+    const [selectedWarehouse, setSelectedWarehouse] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
     const [invoices, setInvoices] = useState([]);
@@ -20,49 +19,64 @@ const Index = () => {
         {
             city: "New York",
             product: "Product A",
-            cetgory: "Grocery",
+            category: "Grocery",
             items: 30,
+            warehouse: "Warehouse A",
             image: img1,
             date: "2023-01-15",
         },
         {
             city: "Los Angeles",
             product: "Product B",
-            cetgory: "Grocery",
+            category: "Grocery",
             items: 20,
+            warehouse: "Warehouse B",
             image: img2,
             date: "2023-05-20",
         },
         {
             city: "Chicago",
             product: "Product C",
-            cetgory: "Grocery",
+            category: "Grocery",
             items: 25,
+            warehouse: "Warehouse A",
             image: img3,
             date: "2024-07-10",
         },
         {
             city: "Houston",
             product: "Product D",
-            cetgory: "Grocery",
+            category: "Grocery",
             items: 15,
+            warehouse: "Warehouse C",
             image: img1,
             date: "2024-08-22",
         },
-        // Add more records as needed
+        {
+            city: "Houston",
+            product: "Product E",
+            category: "Grocery",
+            items: 85,
+            warehouse: "Warehouse C",
+            image: img4,
+            date: "2024-08-22",
+        },
     ];
 
     // Filter and search invoices based on criteria
     const filteredInvoices = invoices.filter((invoice) => {
         const matchYear = selectedYear ? invoice.date.startsWith(selectedYear) : true;
         const matchMonth = selectedMonth ? invoice.date.slice(5, 7) === selectedMonth : true;
+        const matchWarehouse = selectedWarehouse
+            ? invoice.warehouse?.toLowerCase() === selectedWarehouse?.toLowerCase()
+            : true;
         const matchCategory = selectedCategory
-            ? invoice.cetgory?.toLowerCase() === selectedCategory?.toLowerCase()
+            ? invoice.category?.toLowerCase() === selectedCategory?.toLowerCase()
             : true;
         const matchSearch =
             invoice.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
             invoice.product.toLowerCase().includes(searchQuery.toLowerCase());
-        return matchYear && matchMonth && matchSearch && matchCategory;
+        return matchYear && matchMonth && matchSearch && matchCategory && matchWarehouse;
     });
 
     // Automatically generate invoices when component mounts
@@ -70,7 +84,7 @@ const Index = () => {
         const generatedInvoices = data.map((entry, index) => ({
             id: index + 1,
             ...entry,
-            totalAmount: entry.orders * 50, // Example: $50 per order
+            totalAmount: entry.items * 50, // Example: $50 per item
         }));
         setInvoices(generatedInvoices);
     }, []);
@@ -91,24 +105,23 @@ const Index = () => {
 
             {/* Filter and Search Controls */}
             <div className="flex flex-col md:flex-row gap-4 mb-6">
-                {/* <select
+                <select
                     className="border p-2 rounded"
-                    value={selectedYear}
-                    onChange={(e) => setSelectedYear(e.target.value)}
+                    value={selectedWarehouse}
+                    onChange={(e) => setSelectedWarehouse(e.target.value)}
                 >
-                    <option value="">Filter by Year</option>
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
-                </select> */}
-
-              
+                    <option value="">Filter by Warehouse</option>
+                    <option value="Warehouse A">Warehouse A</option>
+                    <option value="Warehouse B">Warehouse B</option>
+                    <option value="Warehouse C">Warehouse C</option>
+                </select>
 
                 <select
                     className="border p-2 rounded"
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
                 >
-                    <option value="">Filter by Cagetory</option>
+                    <option value="">Filter by Category</option>
                     <option value="Cloths">Cloths</option>
                     <option value="Toys">Toys</option>
                     <option value="Grocery">Grocery</option>
@@ -125,12 +138,6 @@ const Index = () => {
                 <p className="bg-blue-500 text-white text-xl text-center py-3 font-semibold px-4 rounded">
                     Total items {invoices.length}
                 </p>
-                {/* <Button
-                    onClick={downloadAllInvoices}
-                    className="p-2 rounded lg:w-[100px] bg-[#2576b6] w-full "
-                >
-                    Download All
-                </Button> */}
             </div>
 
             {/* Invoice List */}
@@ -141,14 +148,14 @@ const Index = () => {
                             <img
                                 src={invoice.image}
                                 alt="Product"
-                                className="w-20 h-20   object-cover rounded"
+                                className="w-20 h-20 object-cover rounded"
                             />
                             <div>
                                 <h2 className="text-lg font-semibold">
                                     {invoice.city} - {invoice.product}
                                 </h2>
-                                <p>Category: {invoice.cetgory}</p>
-
+                                <p>Category: {invoice.category}</p>
+                                <p>Warehouse: {invoice.warehouse}</p>
                                 <p>Date: {invoice.date}</p>
                                 <p>
                                     Items: {invoice.items}{" "}
@@ -162,15 +169,6 @@ const Index = () => {
                                 </p>
                             </div>
                         </div>
-                        {/* <div className="border-t pt-4">
-                            <p>Items: {invoice.items} Left</p>
-                        </div> */}
-                        {/* <Button
-                            onClick={() => downloadInvoice(invoice)}
-                            className="py-3 mt-4 px-4 rounded w-[100px] bg-[#2576b6]"
-                        >
-                            Download
-                        </Button> */}
                     </Card>
                 ))}
             </div>
