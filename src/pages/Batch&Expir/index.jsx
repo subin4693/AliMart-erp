@@ -98,6 +98,9 @@ const Index = () => {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="border-2 p-2 rounded outline-none"
                 />
+                 {/* <p className="bg-blue-500 text-white text-xl text-center py-3 font-semibold px-4 rounded">
+                    Total items {data.length}
+                </p> */}
 
                 <button
                     onClick={() => setShowExpiredProducts(!showExpiredProducts)}
