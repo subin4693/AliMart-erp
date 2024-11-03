@@ -161,11 +161,12 @@ const Index = () => {
                                     Items: {invoice.items}{" "}
                                     <span
                                         className={
-                                            invoice.items < 20 ? "text-[#e62028]" : "text-green-600"
+                                            invoice.items < 20 ? "text-red-600 font-bold" : "text-green-600 font-bold" 
                                         }
                                     >
                                         Left
                                     </span>
+                                  
                                 </p>
                             </div>
                         </div>
