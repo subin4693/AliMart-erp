@@ -103,7 +103,7 @@ const Index = () => {
                     onClick={() => setShowExpiredProducts(!showExpiredProducts)}
                     className="bg-blue-500 text-white text-xl text-center py-3 font-semibold px-4 rounded"
                 >
-                    {!showExpiredProducts ? "Products Expiring Soon" : "Expired Products"}
+                    {showExpiredProducts ? "Products Expiring Soon" : "Expired Products"}
                 </button>
             </div>
 
