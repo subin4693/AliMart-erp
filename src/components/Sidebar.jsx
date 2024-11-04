@@ -127,7 +127,7 @@ const Sidebar = () => {
                                 </div>
                             )}
                         </div>
-                        <div>
+                        {/* <div>
                             <Button
                                 onClick={() => toggleDropdown("qrBarcode")}
                                 className="flex justify-between p-5 items-center text-white w-full text-xl"
@@ -153,7 +153,7 @@ const Sidebar = () => {
                                     </Link>
                                 </div>
                             )}
-                        </div>
+                        </div> */}
                         <div>
                             <Button
                                 onClick={() => toggleDropdown("reports")}

@@ -143,8 +143,11 @@ const Index = () => {
             {/* Invoice List */}
             <div className="grid md:grid-cols-4 gap-6">
                 {filteredInvoices.map((invoice) => (
-                    <Card key={invoice.id} className="p-5 shadow-lg">
-                        <div className="flex flex-wrap justify-center items-center gap-4 mb-4">
+                    <Card
+                        key={invoice.id}
+                        className="p-5 shadow-lg cursor-pointer transition-all duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]"
+                    >
+                        <div className="flex flex-wrap justify-center items-center gap-4 mb-4 [backface-visibility:hidden]">
                             <img
                                 src={invoice.image}
                                 alt="Product"
@@ -170,6 +173,13 @@ const Index = () => {
                                     </span>
                                 </p>
                             </div>
+                        </div>
+                        <div className="p-2 absolute flex justify-center items-center inset-0 h-full w-full rounded-xl px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                            <img
+                                className="w-full h-[200px]  lg:h-full "
+                                src="https://thumbs.dreamstime.com/z/qr-code-i-love-you-also-includes-eps-vector-qr-code-i-love-you-eps-vector-103657348.jpg?w=400"
+                                alt=""
+                            />{" "}
                         </div>
                     </Card>
                 ))}
