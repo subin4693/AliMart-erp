@@ -10,6 +10,7 @@ import {
     InventaryValuation,
     BatchExpir,
 } from "@/pages";
+import WarehouseDashboard from "@/pages/warehouseManagement/warehouseDashboard/index";
 // import { InventoryReports } from "@/pages/InventoryReports";
 import Layout from "@/layouts/Layout";
 
@@ -53,6 +54,10 @@ const App = () => {
                 {
                     path: "/batch-expiry",
                     element: <BatchExpir />,
+                },
+                {
+                    path: "/multiple-warehouse",
+                    element: <WarehouseDashboard />,
                 },
             ],
         },
