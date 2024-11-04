@@ -19,7 +19,6 @@ const Reports = () => {
     const [selectedYear, setSelectedYear] = useState(null); // Selected year state
     const [selectedMonth, setSelectedMonth] = useState(null); // Selected month state
 
- 
     const branches = [
         {
             _id: "idone",
@@ -96,7 +95,8 @@ const Reports = () => {
                     total: 600.0,
                 },
             ],
-        },  {
+        },
+        {
             customername: "John Doe",
             items: [
                 {
@@ -114,7 +114,8 @@ const Reports = () => {
                     total: 500.0,
                 },
             ],
-        },  {
+        },
+        {
             customername: "John Doe",
             items: [
                 {
@@ -132,7 +133,8 @@ const Reports = () => {
                     total: 500.0,
                 },
             ],
-        },  {
+        },
+        {
             customername: "John Doe",
             items: [
                 {
@@ -150,7 +152,8 @@ const Reports = () => {
                     total: 500.0,
                 },
             ],
-        },  {
+        },
+        {
             customername: "John Doe",
             items: [
                 {
@@ -168,7 +171,8 @@ const Reports = () => {
                     total: 500.0,
                 },
             ],
-        },  {
+        },
+        {
             customername: "John Doe",
             items: [
                 {
@@ -186,7 +190,8 @@ const Reports = () => {
                     total: 500.0,
                 },
             ],
-        },  {
+        },
+        {
             customername: "John Doe",
             items: [
                 {
@@ -204,7 +209,8 @@ const Reports = () => {
                     total: 500.0,
                 },
             ],
-        },  {
+        },
+        {
             customername: "John Doe",
             items: [
                 {
@@ -222,7 +228,8 @@ const Reports = () => {
                     total: 500.0,
                 },
             ],
-        }, {
+        },
+        {
             customername: "John Doe",
             items: [
                 {
@@ -240,7 +247,8 @@ const Reports = () => {
                     total: 500.0,
                 },
             ],
-        },  {
+        },
+        {
             customername: "John Doe",
             items: [
                 {
@@ -258,7 +266,8 @@ const Reports = () => {
                     total: 500.0,
                 },
             ],
-        },  {
+        },
+        {
             customername: "John Doe",
             items: [
                 {
@@ -276,7 +285,7 @@ const Reports = () => {
                     total: 500.0,
                 },
             ],
-        },  
+        },
     ];
     return (
         <div className="  w-full">
@@ -290,7 +299,6 @@ const Reports = () => {
                 selectedCategory={selectedCategory}
                 setSelectedCategory={setSelectedCategory}
             /> */}
- 
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-5 mt-5 ">
                 <TopCard title={"Total Revenue"} number={"7900 Qar"} Icon={DollarSignIcon} />
@@ -298,40 +306,41 @@ const Reports = () => {
                 <TopCard title={"Total Categorys"} number={"7"} Icon={SquareStack} />
                 <TopCard title={"Total Products"} number={"984"} Icon={ShoppingBasket} />
             </div>
-                <div className="mt-5">
-                    <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-5  ">
-                        <BarChart
-                            selectedMonth={selectedMonth}
-                            setSelectedMonth={setSelectedMonth}
-                            selectedYear={selectedYear}
-                            setSelectedYear={setSelectedYear}
-                        />
+            <div className="mt-5">
+                <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-5  ">
+                    <BarChart
+                        selectedMonth={selectedMonth}
+                        setSelectedMonth={setSelectedMonth}
+                        selectedYear={selectedYear}
+                        setSelectedYear={setSelectedYear}
+                    />
 
-                        <Card className="p-5 grid-1   ">
-                            <h1 className="font-bold text-lg">Recent Sales</h1>
-                            <div className="flex justify-between align-center font-bold mb-5  border-b pb-2 mt-2">
-                                <span>Name</span><span>Total cost</span>
-                                </div>
-                            {recentSales.map((sales, index) => (
-                                <div key={index} className="mb-1">
-                                    <div>
-                                        <div className="flex justify-between align-center">
-                                            <h3 className="text-lg font-medium">
-                                                {sales.customername}
-                                            </h3>
+                    <Card className="p-5 grid-1   ">
+                        <h1 className="font-bold text-lg">Recent Sales</h1>
+                        <div className="flex justify-between align-center font-bold mb-5  border-b pb-2 mt-2">
+                            <span>Name</span>
+                            <span>Total cost</span>
+                        </div>
+                        {recentSales.map((sales, index) => (
+                            <div key={index} className="mb-1">
+                                <div>
+                                    <div className="flex justify-between align-center">
+                                        <h3 className="text-lg font-medium">
+                                            {sales.customername}
+                                        </h3>
 
-                                            <h3 className="text-lg font-semibold">
-                                                {sales.items.reduce(
-                                                    (acc, item2) => acc + item2.total,
-                                                    0,
-                                                )}{" "}
-                                            </h3>
-                                        </div>
+                                        <h3 className="text-lg font-semibold">
+                                            {sales.items.reduce(
+                                                (acc, item2) => acc + item2.total,
+                                                0,
+                                            )}{" "}
+                                        </h3>
                                     </div>
                                 </div>
-                            ))}
-                        </Card>
-                    </div>
+                            </div>
+                        ))}
+                    </Card>
+                </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
                 <MixedBarChart

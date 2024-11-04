@@ -7,6 +7,7 @@ import img3 from "../../assets/3.png";
 const Index = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("");
+    const [selectedWarehouse, setSelectedWarehouse] = useState("");
     const [batches, setBatches] = useState([]);
     const [showExpiredProducts, setShowExpiredProducts] = useState(true); // State to manage visibility
 
@@ -16,6 +17,7 @@ const Index = () => {
             id: 1,
             productName: "Product A",
             category: "Grocery",
+            warehouse: "Warehouse A",
             batchNumber: "A123",
             expiryDate: "2023-10-01",
             quantity: 50,
@@ -25,6 +27,7 @@ const Index = () => {
             id: 2,
             productName: "Product B",
             category: "Grocery",
+            warehouse: "Warehouse B",
             batchNumber: "B456",
             expiryDate: "2023-11-15",
             quantity: 30,
@@ -34,6 +37,7 @@ const Index = () => {
             id: 3,
             productName: "Product C",
             category: "Grocery",
+            warehouse: "Warehouse A",
             batchNumber: "C789",
             expiryDate: "2024-01-10",
             quantity: 20,
@@ -43,6 +47,7 @@ const Index = () => {
             id: 4,
             productName: "Product D",
             category: "Grocery",
+            warehouse: "Warehouse C",
             batchNumber: "D012",
             expiryDate: "2024-11-20",
             quantity: 15,
@@ -55,12 +60,19 @@ const Index = () => {
         setBatches(data);
     }, []);
 
-    // Filter batches based on the search query and selected category
+    // Filter batches based on the search query, selected category, and selected warehouse
     const filteredBatches = batches.filter((batch) => {
         const matchCategory = selectedCategory
             ? batch.category.toLowerCase() === selectedCategory.toLowerCase()
             : true;
-        return matchCategory && batch.productName.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchWarehouse = selectedWarehouse
+            ? batch.warehouse.toLowerCase() === selectedWarehouse.toLowerCase()
+            : true;
+        return (
+            matchCategory &&
+            matchWarehouse &&
+            batch.productName.toLowerCase().includes(searchQuery.toLowerCase())
+        );
     });
 
     // Function to check if a product is expired
@@ -82,10 +94,20 @@ const Index = () => {
             <div className="flex flex-col md:flex-row gap-4 mb-6">
                 <select
                     className="border p-2 rounded"
+                    value={selectedWarehouse}
+                    onChange={(e) => setSelectedWarehouse(e.target.value)}
+                >
+                    <option value="">Filter by Warehouse</option>
+                    <option value="Warehouse A">Warehouse A</option>
+                    <option value="Warehouse B">Warehouse B</option>
+                    <option value="Warehouse C">Warehouse C</option>
+                </select>
+                <select
+                    className="border p-2 rounded"
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
                 >
-                    <option value="">Filter by Cagetory</option>
+                    <option value="">Filter by Category</option>
                     <option value="Cloths">Cloths</option>
                     <option value="Toys">Toys</option>
                     <option value="Grocery">Grocery</option>
@@ -93,7 +115,7 @@ const Index = () => {
 
                 <input
                     type="text"
-                    placeholder="Search by city or product"
+                    placeholder="Search by product"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="border-2 p-2 rounded outline-none"
@@ -103,7 +125,7 @@ const Index = () => {
                     onClick={() => setShowExpiredProducts(!showExpiredProducts)}
                     className="bg-blue-500 text-white text-xl text-center py-3 font-semibold px-4 rounded"
                 >
-                    {!showExpiredProducts ? "Products Expiring Soon" : "Expired Products"}
+                    {showExpiredProducts ? "Products Expiring Soon" : "Expired Products"}
                 </button>
             </div>
 
@@ -127,6 +149,7 @@ const Index = () => {
                                             </h2>
                                             <p>Batch Number: {batch.batchNumber}</p>
                                             <p>Category: {batch.category}</p>
+                                            <p>Warehouse: {batch.warehouse}</p>
                                             <p>Expiry Date: {batch.expiryDate}</p>
                                             <p>Quantity: {batch.quantity}</p>
                                             <p className="mt-2 text-red-600 font-bold">
@@ -163,6 +186,7 @@ const Index = () => {
                                             </h2>
                                             <p>Batch Number: {batch.batchNumber}</p>
                                             <p>Category: {batch.category}</p>
+                                            <p>Warehouse: {batch.warehouse}</p>
                                             <p>Expiry Date: {batch.expiryDate}</p>
                                             <p>Quantity: {batch.quantity}</p>
                                             <p className="mt-2 text-yellow-600 font-bold">
