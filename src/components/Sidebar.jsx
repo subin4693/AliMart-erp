@@ -242,6 +242,11 @@ const Sidebar = () => {
                                             Stock Transfer
                                         </div>
                                     </Link>
+                                    <Link to={"/stock-transfer-logs"}>
+                                        <div className="px-4 py-2 hover:bg-gray-600">
+                                            Stock Transfer Logs
+                                        </div>
+                                    </Link>
                                     <Link to={"/warehouse-zones"}>
                                         <div className="px-4 py-2 hover:bg-gray-600">
                                             Warehouse Zones

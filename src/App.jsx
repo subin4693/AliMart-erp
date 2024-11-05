@@ -11,6 +11,9 @@ import {
     BatchExpir,
 } from "@/pages";
 import WarehouseDashboard from "@/pages/warehouseManagement/warehouseDashboard/index";
+import StockTransfer from "./pages/warehouseManagement/stockTransfer/index";
+import StockTransferLogs from "./pages/warehouseManagement/stockTransferLogs/index";
+
 // import { InventoryReports } from "@/pages/InventoryReports";
 import Layout from "@/layouts/Layout";
 
@@ -58,6 +61,14 @@ const App = () => {
                 {
                     path: "/multiple-warehouse",
                     element: <WarehouseDashboard />,
+                },
+                {
+                    path: "/stock-transfer",
+                    element: <StockTransfer />,
+                },
+                {
+                    path: "/stock-transfer-logs",
+                    element: <StockTransferLogs />,
                 },
             ],
         },
